@@ -1,0 +1,133 @@
+stack-l > .clusterFooter > .boxFooter > img {
+    max-inline-size: 20px;
+}
+
+img + img {
+    margin-inline-start: 1%;
+}
+
+cluster-f {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  cluster-d {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  cluster-f box-l, 
+  cluster-f a {
+    max-inline-size: 90ch;
+    margin: .25em;
+    /* margin-left: 0em; */
+    /* margin-right: .5em; */
+    padding: 0em;
+    background: transparent;
+    color: #000;
+    /* font-weight: bold; */
+    text-decoration: none;
+    font-family: inherit;
+    border-radius: 3px;
+}
+
+.clusterFooter {
+    --space: 1rem;
+    /* ↓ Set the Flexbox context */
+    /* display: flex; */
+    /* ↓ Enable wrapping */
+    flex-wrap: wrap;
+    /* ↓ Set the space/gap */
+    gap: var(--space, 1rem);
+    /* ↓ Choose your justification (flex-start is default) */
+    justify-content: center;
+    /* ↓ Choose your alignment (flex-start is default) */
+    align-items: center;
+}
+
+
+
+.boxFooter {
+    /* ↓ Padding set to the first point on the modular scale */
+    padding: var(--s-5);
+    /* ↓ Assumes you have a --border-thin var */
+    /* border: var(--border-thin) solid; */
+    /* ↓ Always apply the transparent outline, for high contrast mode */
+    outline: var(--border-thin) transparent;
+    outline-offset: calc(var(--border-thin) * -1);
+    /* ↓ The light and dark color vars */
+    text-align: center;
+    --color-light: #fff;
+    --color-dark: #000;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
+    
+  .boxFooter * {
+    /* ↓ Force colors to inherit from the parent
+    and honor inversion (below) */
+    color: inherit;
+  }
+    
+  .boxFooter.invert {
+    /* ↓ The color vars inverted */
+    color: var(--color-light);
+    background-color: var(--color-dark);
+  }
+  
+
+.textAlignFooter {
+    text-align: center;
+}
+
+@media (max-width: 867px) {
+
+  /* Footer Links */
+  
+  footer > box-l > center-l > cluster-f > box-l > cluster-f a {
+    font-size: 100%;
+  }
+
+  /* Footer Contact Information */
+
+  address > p {
+    font-size: 100%;
+  }
+
+  /* Footer Last Elemetn */
+
+  div > box-l > p {
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+
+  /* Footer Links */
+  
+  footer > box-l > center-l > cluster-f > box-l > cluster-f a {
+    font-size: 85%;
+  }
+
+  /* Footer Contact Information */
+
+  address > p {
+    font-size: 85%;
+  }
+
+  /* Footer Last Elemetn */
+
+  div > box-l > p {
+    font-size: 85%;
+  }
+}
+
+
+
+
+
+

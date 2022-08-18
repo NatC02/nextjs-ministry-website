@@ -1,0 +1,103 @@
+.stackCard {
+  --space: var(--s3);
+  /* ↓ The flex context */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stackCard > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-block: 0;
+}
+
+.stackCard > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-block-start: var(--space, 1.5rem);
+}
+
+
+
+
+.coverCard {
+  --space: var(--s0);
+  /* ↓ Establish a columnal flex context */
+  display: flex;
+  flex-direction: column;
+  /* ↓ Set a minimum height to match the viewport height
+  (any minimum would be fine) */
+  min-block-size: 0vh;
+  /* Set a padding value */
+  padding: var(--space);
+  }
+  
+  .coverCard > * {
+  /* ↓ Give each child a top and bottom margin */
+  margin-block: var(--s0);
+  }
+  
+  .coverCard > :first-child:not(h1) {
+  /* ↓ Remove the top margin from the first-child
+  if it _doesn't_ match the centered element */
+  margin-block-start: 0;
+  }
+  
+  .coverCard > :last-child:not(h1) {
+  /* ↓ Remove the bottom margin from the last-child
+  if it _doesn't_ match the centered element */
+  margin-block-end: 0;
+  }
+  
+  .coverCard > h1 {
+  /* ↓ Center the centered element (h1 here)
+  in the available vertical space */
+  margin-block: auto;
+  }
+
+
+
+
+
+
+.boxCard {
+  /* ↓ Padding set to the first point on the modular scale */
+  padding: var(--s0);
+  /* ↓ Assumes you have a --border-thin var */
+  border: var(--border-thin) solid;
+  /* ↓ Always apply the transparent outline, for high contrast mode */
+  outline: var(--border-thin) transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+  /* ↓ The light and dark color vars */
+  --color-light: #fff;
+  --color-dark: #000;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+  
+.boxCard * {
+  /* ↓ Force colors to inherit from the parent
+  and honor inversion (below) */
+  color: inherit;
+}
+  
+.boxCard.invert {
+  /* ↓ The color vars inverted */
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+
+.clusterCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+  
+
+
+
+
+
+
+

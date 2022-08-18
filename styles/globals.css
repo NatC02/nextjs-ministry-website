@@ -1,0 +1,982 @@
+@font-face {
+  font-family: Barlow Condensed;
+  src: url(/css/lib/fonts/barlowcondensed-bold.woff2) format("woff2"),url(/css/lib/fonts/barlowcondensed-bold.woff) format("woff");
+  font-weight: 400;
+  font-style: normal
+}
+
+:root {
+  --font-plain: Helvetica Neue,Helvetica,Arial,sans-serif;
+  --font-serif: Georgia,serif;
+  --font-special: Barlow Condensed,Helvetica,sans-serif;
+  --font-mono: Menlo,Courier,Courier New,Andale Mono,monospace;
+  --color-dark: #050505;
+  --color-darkish: #404040;
+  --color-lightish: #e6e6e6;
+  --color-light: #fafafa;
+  --color-mid: grey;
+  --ratio: 1.77;
+  --s-5: clamp(0.33rem,0.39rem + -0.29vw,0.18rem);
+  --s-4: clamp(0.41rem,0.47rem + -0.31vw,0.25rem);
+  --s-3: clamp(0.51rem,0.57rem + -0.31vw,0.35rem);
+  --s-2: clamp(0.64rem,0.69rem + -0.27vw,0.5rem);
+  --s-1: clamp(0.8rem,0.84rem + -0.18vw,0.71rem);
+  --s0: clamp(1rem,1rem + 0vw,1rem);
+  --s1: clamp(1.25rem,1.19rem + 0.32vw,1.41rem);
+  --s2: clamp(1.56rem,1.39rem + 0.85vw,2rem);
+  --s3: clamp(1.95rem,1.61rem + 1.7vw,2.83rem);
+  --s4: clamp(2.44rem,1.83rem + 3.04vw,4rem);
+  --s5: clamp(3.05rem,2.04rem + 5.07vw,5.65rem);
+  --measure-big: 180ch;
+  --measure-small: 90ch;
+  --line-height: var(--ratio);
+  --line-height-small: calc(0.8*var(--ratio));
+  --border-thin: var(--s-5);
+  --border-thick: var(--s-2);
+  line-height: var(--ratio);
+  font-size: calc(.333vw + 1em);
+  font-family: var(--font-plain);
+  background-color: transparent; 
+  /* var(--color-light); */
+  color: var(--color-dark)
+}
+
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+/* Default */
+
+*,:after,:before {
+box-sizing: border-box;
+background-color: inherit;
+font-family: inherit;
+color: inherit;
+overflow-wrap: break-word;
+margin: 0;
+padding: 0;
+border: 0 solid
+}
+
+[hidden] {
+display: none
+}
+
+[hidden]+* {
+margin-top: 0!important
+}
+
+footer,header,main,nav {
+display: block
+}
+
+@media (prefers-reduced-motion:no-preference) {
+html:focus-within {
+  scroll-behavior: smooth
+}
+}
+
+:focus {
+outline: var(--border-thin) solid var(--color-mid);
+outline-offset: var(--border-thin)
+}
+
+[tabindex="-1"]:focus,shrink-grow:focus {
+outline: none
+}
+
+.cta,button {
+font-size: inherit;
+font-weight: 700;
+display: inline-block;
+cursor: pointer;
+line-height: 1.1;
+font-family: var(--font-special);
+color: var(--color-light);
+background-color: var(--color-dark);
+padding: .5em 1.5em .7em;
+border-width: var(--border-thin)
+}
+
+button {
+border-color: var(--color-dark)
+}
+
+.cta {
+background-color: transparent;
+color: var(--color-dark)
+}
+
+.cta--big {
+display: block;
+font-size: var(--s2);
+text-align: center;
+text-decoration: none
+}
+
+.cta--big span {
+text-decoration: underline
+}
+
+/* img {
+width: 50%
+} */
+
+[role=figure],figure {
+text-align: center
+}
+
+[role=figure] img,figure img {
+background-image: linear-gradient(var(--color-light),var(--color-light))
+}
+
+.figcaption,figcaption {
+margin-top: var(--s-1);
+font-size: var(--s-1)
+}
+
+[aria-current=true] noscript {
+padding: var(--s-1);
+background-color: var(--color-lightish)
+}
+
+kbd {
+line-height: 1;
+font-size: var(--s-1);
+color: var(--color-light);
+background-color: var(--color-dark);
+padding: .125em .5em;
+border-radius: .125em
+}
+
+table {
+width: 100%;
+border-collapse: collapse
+}
+
+table code {
+white-space: nowrap
+}
+
+td,th {
+border-width: var(--border-thin);
+padding: var(--s-1);
+text-align: left
+}
+
+td:first-child,th {
+font-weight: 700
+}
+
+main {
+line-height: 1.5
+}
+
+h1,h2,h3,h4 {
+line-height: var(--line-height-small);
+font-family: var(--font-special);
+font-weight: 700;
+hyphens: auto
+}
+
+h1 {
+font-size: var(--s4)
+}
+
+h2 {
+font-size: var(--s3)
+}
+
+h3 {
+font-size: var(--s2)
+}
+
+h4 {
+font-size: var(--s1)
+}
+
+p, a {
+  font-size: var(--s0);
+  line-height: var(--line-height-small);
+  font-weight: 200;
+}
+
+aside>ol,aside>ul,main>ol,main>ul {
+padding-left: 2em
+}
+
+main>*+* {
+margin-top: var(--s3)
+}
+
+
+.max-inline-size\:measure {
+  max-inline-size: var(--measure-small);
+}
+
+.max-inline-size\:measure\/2 {
+  max-inline-size: calc(var(--measure-small) / 2);
+}
+
+hr {
+padding: var(--border-thin) 0 0;
+border-left-width: 0;
+border-bottom-width: var(--border-thin);
+border-right-width: 0;
+border-top-width: var(--border-thin)
+}
+
+button,pre {
+outline: var(--border-thin) solid transparent;
+outline-offset: calc(var(--border-thin)*-1)
+}
+
+/* Labels Elements */
+
+label {
+font-weight: 700;
+font-family: var(--font-mono)
+}
+
+label,label small {
+display: block
+}
+
+label small {
+font-weight: 400;
+font-style: italic
+}
+
+/* focus on element or form */
+
+input:focus,textarea:focus {
+outline-offset: 0
+}
+
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+
+/* Two Media queries to rule them all (so cliche)-- dynamically scale ALL text */
+
+@media (max-width: 867px) {
+  :root {
+    font-size: 150%;
+  }
+  
+  h1,h2,h3,h4 {
+    font-size: 125%;
+  }
+  
+  p, a {
+    font-size: 115%;
+  }
+}
+
+@media (max-width: 425px) {
+  :root {
+    font-size: 125%;
+  }
+  
+  h1,h2,h3,h4 {
+    font-size: 100%;
+  }
+
+  p, a {
+    font-size: 100%;
+  }
+}
+
+/* work on all this in a bit */
+
+
+
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+/* layout primitives */
+
+/* stack */
+/* stack */
+/* stack */
+/* stack */
+/* stack */
+
+stack-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack {
+/* ↓ The flex context */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+
+.stack > * {
+/* ↓ Any extant vertical margins are removed */
+margin-block: 0;
+}
+
+.stack > * + * {
+/* ↓ Top margin is only applied to successive elements */
+margin-block-start: var(--space, 1.5rem);
+}
+
+/* box */
+
+box-l {
+  display: block;
+  padding: var(--s0);
+  /* border-width: var(--border-thin); */
+  border-radius: var(--s-0);
+  /* ↓ For high contrast mode */
+  /* outline: var(--border-thin) solid transparent;
+  outline-offset: calc(var(--border-thin) * -1); */
+}
+
+.box {
+/* ↓ Padding set to the first point on the modular scale */
+padding: var(--s-5);
+/* ↓ Assumes you have a --border-thin var */
+border: var(--border-thin) solid;
+/* ↓ Always apply the transparent outline, for high contrast mode */
+outline: var(--border-thin) transparent;
+outline-offset: calc(var(--border-thin) * -1);
+/* ↓ The light and dark color vars */
+--color-light: #fff;
+--color-dark: #000;
+color: var(--color-dark);
+background-color: var(--color-light);
+}
+
+.box * {
+/* ↓ Force colors to inherit from the parent
+and honor inversion (below) */
+color: inherit;
+}
+
+.box.invert {
+/* ↓ The color vars inverted */
+color: var(--color-light);
+background-color: var(--color-dark);
+}
+
+/* center */
+/* center */
+/* center */
+/* center */
+/* center */
+
+center-l {
+display: block;
+box-sizing: content-box;
+margin-inline: auto;
+max-inline-size: var(--measure-small);
+}
+
+.center {
+/* ↓ Remove padding from the width calculation */
+box-sizing: content-box;
+/* ↓ The maximum width is the maximum measure */
+max-inline-size: 60ch;
+/* ↓ Only affect horizontal margins */
+margin-inline: auto;
+/* ↓ Apply the minimum horizontal space */
+padding-inline-start: var(--s1);
+padding-inline-end: var(--s1);
+}
+
+
+/* cluster */
+/* cluster */
+/* cluster */
+/* cluster */
+/* cluster */
+
+cluster-l {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cluster {
+--space: 1rem;
+/* ↓ Set the Flexbox context */
+display: flex;
+/* ↓ Enable wrapping */
+flex-wrap: wrap;
+/* ↓ Set the space/gap */
+gap: var(--space, 1rem);
+/* ↓ Choose your justification (flex-start is default) */
+justify-content: center;
+/* ↓ Choose your alignment (flex-start is default) */
+align-items: center;
+}
+
+/* cover */
+/* cover */
+/* cover */
+/* cover */
+/* cover */
+
+cover-l {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  /* padding: var(--s1); */
+}
+
+.cover {
+--space: var(--s1);
+/* ↓ Establish a columnal flex context */
+display: flex;
+flex-direction: column;
+/* ↓ Set a minimum height to match the viewport height
+(any minimum would be fine) */
+min-block-size: 100vh;
+/* Set a padding value */
+padding: var(--space);
+}
+
+.cover > * {
+/* ↓ Give each child a top and bottom margin */
+margin-block: var(--s1);
+}
+
+.cover > :first-child:not(h1) {
+/* ↓ Remove the top margin from the first-child
+if it _doesn't_ match the centered element */
+margin-block-start: 0;
+}
+
+.cover > :last-child:not(h1) {
+/* ↓ Remove the bottom margin from the last-child
+if it _doesn't_ match the centered element */
+margin-block-end: 0;
+}
+
+.cover > h1 {
+/* ↓ Center the centered element (h1 here)
+in the available vertical space */
+margin-block: auto;
+}
+
+/* frame */
+/* frame */
+/* frame */
+/* frame */
+/* frame */
+
+frame-l {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+frame-l img,
+frame-l > video {
+inline-size: 100%;
+block-size: 100%;
+object-fit: cover;
+/* modified to fit */
+width: 55.5%;
+}
+
+.frame {
+--n: 16; /* numerator */
+--d: 9; /* denominator */
+aspect-ratio: var(--n) / var(--d);
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.frame > img,
+.frame > video {
+inline-size: 100%;
+block-size: 100%;
+object-fit: cover;
+}
+
+/* grid */
+/* grid */
+/* grid */
+/* grid */
+/* grid */
+
+grid-l {
+	display: grid;
+	grid-gap: var(--s1);
+	align-content: start;
+	grid-template-columns: 100%
+}
+
+.grid {
+/* ↓ Establish a grid context */
+display: grid;
+/* ↓ Set a gap between grid items */
+grid-gap: 1rem;
+/* ↓ Set the minimum column width */
+--minimum: 35ch;
+}
+  
+@supports (width: min(var(--minimum), 100%)) {
+  .grid {
+    /* ↓ Enhance with the min() function
+    into multiple columns */
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--minimum), 100%),
+    1fr));
+  }
+}
+
+/* icon */
+/* icon */
+/* icon */
+/* icon */
+/* icon */
+
+icon-l svg {
+height: 0.75em;
+height: 1cap;
+width: 0.75em;
+width: 1cap;
+}
+
+.icon {
+height: 0.75em;
+/* ↓ Override the em value with `1cap`
+where `cap` is supported */
+height: 1cap;
+width: 0.75em;
+width: 1cap;
+}
+
+.with-icon {
+/* ↓ Set the `inline-flex` context,
+which eliminates the word space */
+display: inline-flex;
+align-items: baseline;
+}
+
+.with-icon .icon {
+/* ↓ Use the logical margin property
+and a --space variable with a fallback */
+margin-inline-end: var(--space, 0.5em);
+}
+
+/* imposter */
+/* imposter */
+/* imposter */
+/* imposter */
+/* imposter */
+
+imposter-l {
+position: absolute;
+/* inset-block-start: 50%; */
+/* inset-inline-start: 50%; */
+
+transform: translate(-50%, 0%);
+max-inline-size: calc(100% - .25rem);
+max-block-size: calc(100% - .25rem);
+}
+
+.imposter {
+/* ↓ Choose the positioning element */
+position: var(--positioning, absolute);
+/* ↓ Position the top left corner in the center */
+inset-block-start: 50%;
+inset-inline-start: 50%;
+/* ↓ Reposition so the center of the element
+is the center of the container */
+transform: translate(-50%, -50%);
+}
+
+.imposter.contain {
+/* ↓ Include a unit, or the calc function will be invalid */
+--margin: 0px;
+/* ↓ Provide scrollbars so content is not obscured */
+overflow: auto;
+/* ↓ Restrict the height and width, including optional
+spacing/margin between the element and positioning container */
+max-inline-size: calc(100% - (var(--margin) * 2));
+max-block-size: calc(100% - (var(--margin) * 2));
+}
+
+/* reel */
+/* reel */
+/* reel */
+/* reel */
+/* reel */
+
+reel-l {
+display: flex;
+overflow-x: auto;
+overflow-y: hidden;
+scrollbar-color: var(--color-light) var(--color-dark);
+}
+
+reel-l > * {
+flex: 0 0 var(--item-width);
+}
+
+reel-l > img {
+block-size: 100%;
+flex-basis: auto;
+inline-size: auto;
+}
+
+reel-l::-webkit-scrollbar {
+block-size: 1rem;
+}
+
+reel-l::-webkit-scrollbar-track {
+background-color: var(--color-dark);
+}
+
+reel-l::-webkit-scrollbar-thumb {
+background-color: var(--color-dark);
+background-image: linear-gradient(var(--color-dark) 0, var(--color-dark) 0.25rem, var(--color-light) 0.25rem, var(--color-light) 0.75rem, var(--color-dark) 0.75rem);
+}
+
+.reel {
+/* ↓ Custom properties for ease of adjustment */
+--space: 1rem;
+--color-light: #fff;
+--color-dark: #000;
+--reel-height: auto;
+--item-width: 25ch;
+display: flex;
+block-size: var(--reel-height);
+/* ↓ Overflow */
+overflow-x: auto;
+overflow-y: hidden;
+/* ↓ For Firefox */
+scrollbar-color: var(--color-light) var(--color-dark);
+}
+
+reel-l::-webkit-scrollbar {
+/*
+↓ Instead, you could make the scrollbar height
+a variable too. This is left as an exercise
+(be mindful of the linear-gradient!)
+*/
+block-size: 1rem;
+}
+
+reel-l::-webkit-scrollbar-track {
+background-color: var(--color-dark);
+}
+
+reel-l::-webkit-scrollbar-thumb {
+background-color: var(--color-dark);
+/* ↓ Linear gradient ‘insets’ the white thumb within the black bar */
+background-image: linear-gradient(var(--color-dark) 0, var(--color-dark)
+0.25rem, var(--color-light) 0.25rem, var(--color-light) 0.75rem, var(--color-
+dark) 0.75rem);
+}
+
+.reel > * {
+/*
+↓ Just a `width` wouldn’t work because
+`flex-shrink: 1` (default) still applies
+*/
+flex: 0 0 var(--item-width);
+}
+
+
+reel-l > img {
+/* ↓ Reset for images */
+block-size: 100%;
+flex-basis: auto;
+width: auto;
+}
+
+.reel > * + * {
+margin-inline-start: var(--space);
+}
+
+.reel.overflowing:not(.no-bar) {
+/* ↓ Only apply if there is a scrollbar (see the JavaScript) */
+padding-block-end: var(--space);
+}
+
+/* ↓ Hide scrollbar with `no-bar` class */
+.reel.no-bar {
+scrollbar-width: none;
+}
+
+.reel.no-bar::-webkit-scrollbar {
+display: none;
+}
+
+/* sidebar */
+/* sidebar */
+/* sidebar */
+/* sidebar */
+/* sidebar */
+
+sidebar-l {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+sidebar-l > * {
+flex-grow: 1;
+}
+
+.with-sidebar {
+display: flex;
+flex-wrap: wrap;
+/* ↓ The default value is the first point on the modular scale */
+gap: var(--gutter, var(--s1));
+}
+
+.with-sidebar > :first-child {
+/* ↓ The width when the sidebar _is_ a sidebar */
+/* flex-basis: 20rem; */
+flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+/* ↓ Grow from nothing */
+flex-basis: 0;
+flex-grow: 999;
+/* ↓ Wrap when the elements are of equal width */
+min-inline-size: 50%;
+}
+
+/* switcher */
+/* switcher */
+/* switcher */
+/* switcher */
+/* switcher */
+
+switcher-l {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+switcher-l > * {
+flex-basis: calc((var(--measure-small) - 100%) * 999);
+flex-grow: 5;
+}
+
+switcher-l > :nth-child(1) {
+flex-basis: 10;
+}
+
+
+.switcher {
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+--threshold: 30rem;
+}
+.switcher > * {
+flex-grow: 1;
+flex-basis: calc((var(--threshold) - 100%) * 999);
+}
+
+/* Shrink-grow  */
+/* Shrink-grow  */
+/* Shrink-grow  */
+/* Shrink-grow  */
+/* Shrink-grow  */
+
+shrink-grow {
+  display: block;
+  margin-inline:0;
+  max-width: none;
+  overflow: hidden;
+  border-width: var(--border-thin);
+  padding: var(--s1)
+}
+
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+/* Navigation / Navbar */
+
+/**
+* Initial state, hidden off screen
+*/
+
+.imposterNav {
+display: none;
+visibility: hidden;
+}
+
+/* imposter-l {
+visibility: hidden;
+} */
+
+/**
+* No JS fallback
+*
+* Triggers menus on hover rather than click. Supports keyboard navigation in modern browsers.
+*/
+cluster-l.clicky-menu.no-js stack-l:hover .imposerNav {
+display: inline-block;
+visibility: visible;
+}
+
+cluster-l.clicky-menu.no-js stack-l:focus-within .imposterNav { /*[2]*/
+display: inline-block;
+visibility: visible;
+}
+
+/**
+* Open/Close Menu Behavior with JS
+*/
+cluster-l cluster-l[aria-hidden="false"] {
+visibility: visible;
+}
+
+/* Prevent offscreen-submenus */
+/* not necessary because of our inherit algorithmic css approach */
+cluster-l .sub-menu--right {
+left: auto !important;
+right: 0 !important;
+}
+
+/**
+* Footnotes
+*
+* [1] Using `visibility` instead of `display` allows for easier transitions and animation of submenus
+* [2] Must be a separate ruleset so that hover works in non-modern browsers
+*/
+
+
+
+/* Hidden SVG used for down arrows */
+svg[hidden] {
+display: none;
+position: absolute;
+}
+
+/* 
+
+We don't need padding or MEDIA query!!! Copying is now easy. Not necessary because of our inherit algorithmic css approach.
+
+.clicky-menu {
+justify-content: stretch;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+@media (max-width: 540px) {
+.clicky-menu {
+    display: flex;
+}
+} */
+
+
+
+/* General Link & Button Styles */
+cluster-l box-l,
+cluster-l a {
+margin: .25em;
+padding: 1em;
+background: transparent;
+color: #000;
+/* font-weight: bold; */
+text-decoration: none;
+font-family: inherit;
+border-radius: 3px;
+}
+
+.clicky-menu a:hover,
+.clicky-menu button:hover {
+background: black;
+}
+
+.clicky-menu a:focus,
+.clicky-menu button:focus {
+outline: .125em dotted purple;
+outline-offset: -.125em;
+}
+
+
+
+
+
+
+
+
+/* extra styles from grid implemntation */
+[data-i="Box-var(--s1)var(--border-thin)false"] {
+  padding: var(--s1);
+  border: var(--border-thin) solid;
+}
+
+[data-i="Image-1:20none"] {
+  max-width: none;
+  min-width: 0;
+}
+
+[data-i="Stack-var(--s1)false"] > * + * {
+  margin-block-start: var(--s1);
+}
+
+words-l {
+  font-family: var(--font-plain);
+}
+
+[data-i="Stack-var(--s1)false"] > * + * {
+  margin-block-start: var(--s1);
+}
+
+text-l {
+  display: block;
+}
+
+
+[data-i="Grid-250pxvar(--s1)"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 2fr));
+}
+
+[data-i="Grid-250pxvar(--s1)"] {
+  grid-gap: var(--s-5);
+}
