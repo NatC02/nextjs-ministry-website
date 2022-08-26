@@ -18,7 +18,7 @@ return (
   <>
     <nav>
       <cluster-l class="clicky-menu no-js">
-        
+
             {navLinks.map((link) => {
               return (
                 // Instead of a stack-l, use a cluster-l (for this bottom element) to have a sidebar where the elements appear (works because of the horizontal-tb css writing mode ---> top to bottom flow). Enable it to see it.
@@ -43,8 +43,6 @@ return (
                         </a>
                       </stack-l>
                     </central-l>
-
-
 
                     <cluster-l>
                       <center-l>
